@@ -2261,25 +2261,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "libxdo"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "00333b8756a3d28e78def82067a377de7fa61b24909000aeaa2b446a948d14db"
-dependencies = [
- "libxdo-sys",
-]
-
-[[package]]
-name = "libxdo-sys"
-version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "db23b9e7e2b7831bbd8aac0bbeeeb7b68cbebc162b227e7052e8e55829a09212"
-dependencies = [
- "libc",
- "x11",
-]
-
-[[package]]
 name = "linux-raw-sys"
 version = "0.4.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2397,23 +2378,15 @@ dependencies = [
 ]
 
 [[package]]
-name = "muda"
-version = "0.15.3"
+name = "muda-win"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fdae9c00e61cc0579bcac625e8ad22104c60548a025bfc972dc83868a28e1484"
+checksum = "3c30cc0737d328a24d38624e791883c150d0f24a449fdb131e45143f8bf5e6ac"
 dependencies = [
  "crossbeam-channel",
  "dpi",
- "gtk",
  "keyboard-types",
- "libxdo",
- "objc2",
- "objc2-app-kit",
- "objc2-foundation",
- "once_cell",
- "png",
  "serde",
- "thiserror",
  "windows-sys 0.59.0",
 ]
 
@@ -3786,12 +3759,12 @@ dependencies = [
 
 [[package]]
 name = "tray-icon-win"
-version = "0.1.0"
+version = "0.1.2"
 dependencies = [
  "crossbeam-channel",
  "eframe",
  "image",
- "muda",
+ "muda-win",
  "serde",
  "serde_jsonc2",
  "tao",

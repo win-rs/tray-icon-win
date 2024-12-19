@@ -110,11 +110,11 @@ pub use self::error::*;
 pub use self::icon::{BadIcon, Icon};
 pub use self::tray_icon_id::TrayIconId;
 
-/// Re-export of [muda](::muda) crate and used for tray context menu.
+/// Re-export of [muda-win](::muda_win) crate and used for tray context menu.
 pub mod menu {
-    pub use muda::*;
+    pub use muda_win::*;
 }
-pub use muda::dpi;
+pub use muda_win::dpi;
 
 static COUNTER: Counter = Counter::new();
 
