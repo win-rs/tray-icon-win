@@ -1,6 +1,6 @@
 [package]
 name = "tray-icon-win"
-version = "0.1.2"
+version = "0.1.1"
 edition = "2021"
 description = "Create tray icons for desktop applications on Windows (fork of tauri-apps/tray-icon)"
 homepage = "https://github.com/win-rs/tray-icon-win"
