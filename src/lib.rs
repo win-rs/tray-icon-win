@@ -67,7 +67,6 @@
 //! You should use [`TrayIconEvent::set_event_handler`] and forward
 //! the tray icon events to the event loop by using [`EventLoopProxy`]
 //! so that the event loop is awakened on each tray icon event.
-//! Same can be done for menu events using [`MenuEvent::set_event_handler`].
 //!
 //! ```no_run
 //! # use winit::event_loop::EventLoop;
