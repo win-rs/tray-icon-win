@@ -1,0 +1,37 @@
+[package]
+name = "tray-icon-win"
+version = "0.1.0"
+edition = "2021"
+description = "Create tray icons for desktop applications on Windows (fork of tauri-apps/tray-icon)"
+homepage = "https://github.com/win-rs/tray-icon-win"
+repository = "https://github.com/win-rs/tray-icon-win"
+license = "MIT OR Apache-2.0"
+categories = ["gui"]
+
+[features]
+default = ["libxdo"]
+libxdo = ["muda/libxdo"]
+serde = ["muda/serde", "dep:serde"]
+common-controls-v6 = ["muda/common-controls-v6"]
+
+[dependencies]
+muda = { version = "0.15.3", default-features = false }
+crossbeam-channel = "0.5.14"
+serde = { version = "1.0.216", optional = true }
+
+[dependencies.windows-sys]
+version = "0.59"
+features = [
+  "Win32_UI_WindowsAndMessaging",
+  "Win32_Foundation",
+  "Win32_System_SystemServices",
+  "Win32_Graphics_Gdi",
+  "Win32_UI_Shell",
+]
+
+[dev-dependencies]
+winit = "0.30.5"
+tao = "0.31.0"
+image = "0.25.5"
+eframe = "0.30.0"
+serde_jsonc2 = "0.1.0"
