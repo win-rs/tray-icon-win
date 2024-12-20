@@ -96,6 +96,7 @@ use std::{cell::RefCell, rc::Rc};
 
 use counter::Counter;
 use crossbeam_channel::{unbounded, Receiver, Sender};
+use muda_win::{MenuEvent, MenuEventHandler};
 use platform_impl::TrayIcon as PlatformTrayIcon;
 use std::sync::{LazyLock, OnceLock};
 
@@ -125,6 +126,9 @@ pub struct TrayIconAttributes {
     /// Tray menu
     pub menu: Option<Box<dyn menu::ContextMenu>>,
 
+    /// Tray menu event
+    pub menu_event: Option<Option<MenuEventHandler>>,
+
     /// Tray icon
     pub icon: Option<Icon>,
 
@@ -139,6 +143,7 @@ impl Default for TrayIconAttributes {
             menu: None,
             icon: None,
             menu_on_left_click: true,
+            menu_event: None,
         }
     }
 }
@@ -200,6 +205,17 @@ impl TrayIconBuilder {
     /// Builds and adds a new [`TrayIcon`] to the system tray.
     pub fn build(self) -> Result<TrayIcon> {
         TrayIcon::with_id(self.id, self.attrs)
+    }
+
+    pub fn on_menu_event<F>(mut self, event: F) -> Self
+    where
+        F: Fn(MenuEvent) + Send + Sync + 'static,
+    {
+        let event = MenuEvent::set_event_handler(Some(event));
+
+        self.attrs.menu_event = event;
+
+        self
     }
 }
 

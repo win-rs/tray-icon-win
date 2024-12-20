@@ -1,6 +1,6 @@
 [package]
 name = "tray-icon-win"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Create tray icons for desktop applications on Windows (fork of tauri-apps/tray-icon)"
 homepage = "https://github.com/win-rs/tray-icon-win"
@@ -21,7 +21,7 @@ common-controls-v6 = ["muda-win/common-controls-v6"]
 [dependencies]
 crossbeam-channel = "0.5.14"
 serde = { version = "1.0.216", optional = true }
-muda-win = { version = "0.1.1", default-features = false }
+muda-win = { version = "0.1.3", default-features = false }
 
 [dependencies.windows-sys]
 version = "0.59"
