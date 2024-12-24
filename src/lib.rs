@@ -222,7 +222,7 @@ impl TrayIconBuilder {
 // Tray icon struct and associated methods.
 ///
 /// This type is reference-counted and the icon is removed when the last instance is dropped.
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct TrayIcon {
     id: TrayIconId,
     tray: Rc<RefCell<PlatformTrayIcon>>,
