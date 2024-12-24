@@ -64,6 +64,23 @@ pub struct TrayIcon {
     internal_id: u32,
 }
 
+impl core::fmt::Debug for TrayIcon {
+    /// Formats the `TrayIcon` struct for debugging.
+    fn fmt(&self, fmt: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        let context_menu = if self.menu.is_some() {
+            "Some(ContextMenu)"
+        } else {
+            "None"
+        };
+        let mut debug = fmt.debug_struct("Error");
+        debug
+            .field("hwnd", &self.hwnd)
+            .field("menu", &context_menu)
+            .field("internal_id", &self.internal_id)
+            .finish()
+    }
+}
+
 impl TrayIcon {
     pub fn new(id: TrayIconId, attrs: TrayIconAttributes) -> crate::Result<Self> {
         let internal_id = COUNTER.next();

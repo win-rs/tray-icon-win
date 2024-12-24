@@ -9,7 +9,7 @@ pub enum Error {
     NotMainThread,
 }
 
-impl fmt::Display for Error {
+impl core::fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Error::OsError(err) => write!(f, "OS error: {}", err),
@@ -21,4 +21,4 @@ impl fmt::Display for Error {
 impl std::error::Error for Error {}
 
 /// Convenient type alias of Result type for tray-icon.
-pub type Result<T> = std::result::Result<T, Error>;
+pub type Result<T> = core::result::Result<T, Error>;
