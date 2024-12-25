@@ -72,7 +72,7 @@ impl core::fmt::Debug for TrayIcon {
         } else {
             "None"
         };
-        let mut debug = fmt.debug_struct("Error");
+        let mut debug = fmt.debug_struct("TrayIcon");
         debug
             .field("hwnd", &self.hwnd)
             .field("menu", &context_menu)
